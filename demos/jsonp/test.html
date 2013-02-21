@@ -1,0 +1,30 @@
+<html>
+
+<head>
+<script src="../assets/js/jquery.js"></script>
+<script>
+
+function runTest() {
+    var surl = 'http://www.coldfusionjedi.com/demos/jsonp/test.cfc?method=remoteGetPerson&callback=?'
+    $.getJSON(surl, function(data) {
+        var res = 'Name: '+data.NAME+'<br/>'
+        res += 'Age: '+data.AGE+'<br/>'
+        res += 'Suaveness: '+data.SUAVENESS
+        if(data.SUAVENESS > 100) res+=' (Rico-worthy)'
+        res+='<br/>'
+        $("#result").html(res)
+    })
+}
+
+$(document).ready(function() {
+    $("#testBtn").click(runTest)
+});
+
+</script>
+</head>
+
+<body>
+    <input type="button" value="Test" id="testBtn">
+    <div id="result"></div>
+</body>
+</html>

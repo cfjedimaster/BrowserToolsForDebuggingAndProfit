@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<script src="../jquery.min.js"></script>
+<script language="javascript">
+
+/*
+General idea - given ANY number, format it to 4 chars or less
+*/
+function fnum(x) {
+	if(isNaN(x)) return x;
+
+	if(x < 9999) {
+		return x;
+	}
+
+	if(x < 1000000) {
+		return Math.round(x/1000) + "K";
+	}
+	if( x < 10000000) {
+		return (x/1000000).toFixed(2) + "M";
+	}
+
+	if(x < 1000000000) {
+		return Math.round((x/1000000)) + "M";
+	}
+
+	if(x < 1000000000000) {
+		return Math.round((x/1000000000)) + "B";
+	}
+
+	return "1T+";
+}
+
+$(document).ready(function() {
+	var inputs = [1,100,999,1000,6321,12019,32901,64091,201912,199102,581091,789109,1210901,
+		5312091,8901451,12901102,23109901,923109901,286109901,9286109901,129286109901,
+		9129286109901];
+	for(var i=0; i<inputs.length; i++) {
+		console.log(inputs[i]+' = '+fnum(inputs[i]));
+	}
+});
+</script>
+</head>
+
+<body>
+
+
+
+</body>
+</html>

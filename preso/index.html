@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Browser Tools for Debugging and Profit</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>Browser Tools for Debugging and Profit</h1>
+					<h3>Ok, so maybe not profit...</h3>
+					<p>
+						<small>Presented by <a href="http://www.raymondcamden.com">Raymond Camden</a> / <a href="http://twitter.com/cfjedimaster">@cfjedimaster</a></small>
+					</p>
+				</section>
+
+				<section>					
+					<h2>Who am I?</h2>
+					<ul style="float:left;width:60%">
+						<li>Developer Evangelist for Adobe</li>
+						<li>Web Standards, HTML5, JavaScript, ColdFusion</li>
+						<li>Blogging at raymondcamden.com</li>
+					</ul>
+					<img src="img/ray.png" class="transparent">
+				</section>
+
+				<section>
+					<h2>What to do when it won't do...</h2>
+					<img src="img/notworking.jpg">
+				</section>
+
+				<section>
+					<h1>So, um, we have a problem</h1>
+				</section>
+
+				<section>
+					<h1>It isn't the bugs</h1>
+				</section>
+
+
+<style>
+.bug .reveal .state-background {
+background-image:url("img/bug.png");
+background-size: cover;
+}
+h1.top2 {
+top:0px;
+}
+</style>
+				<section data-state="bug">
+				</section>
+
+
+				<section>
+					<h1>The problem is finding the bug</h1>
+				</section>
+
+<style>
+.waldo .reveal .state-background {
+background-image:url("img/waldo.png");
+background-size: cover;
+}
+h1.top2 {
+top:0px;
+}
+</style>
+				<section data-state="waldo">
+				</section>
+
+				<section>
+					<img src="img/jqm.png">
+				</section>
+
+				<section>
+					<h2>What has to work...</h2>
+					<ul>
+						<li class="fragment">JavaScript enabled</li>
+						<li class="fragment">jQuery Loaded</li>
+						<li class="fragment">jQuery UI</li>
+						<li class="fragment">jQuery UI CSS</li>
+						<li class="fragment">Have to select the right DOM for the autocomplete</li>
+						<li class="fragment">Have to ensure your setup options match what the control needs</li>
+						<li class="fragment">Have to ensure your data source (which is probably remote) is working right</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Lots of Opportunities</h2>
+					<img src="img/fail.png" style="width:400px">
+				</section>
+
+				<section>
+					<h2>The First Bug</h2>
+					<h3>is one your probably don't know you have</h3>
+					<img src="img/wtf.png" style="width:300px">
+				</section>
+
+				<section>
+					<h2>Can you spot the bug?</h2>
+					<img src="img/good.png">
+				</section>
+
+<style>
+.whatmeworry .reveal .state-background {
+background-image:url("img/whatmeworry.png");
+background-size: 500px;
+}
+h1.top2 {
+top:0px;
+}
+</style>
+				<section data-state="whatmeworry">
+				</section>
+
+<style>
+.catpic {
+	position:absolute;
+	top:0px;
+	margin-left: auto;
+	margin-right:auto;
+}
+</style>
+				<section>
+					<img src="img/good.png">
+					<img class="catpic fragment" src="img/cat.gif" >					
+				</section>
+
+				<section>
+					<h2>Being Proactive</h2>
+					<ul>
+						<li>Using the tools we're going to cover later</li>
+						<li>Unit Testing</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Chrome Extensions</h2>
+					<ul>
+						<li>javascript-error-notifier</li>
+						<li><a href="http://code.google.com/p/javascript-error-notifier/">http://code.google.com/p/javascript-error-notifier/</a></li>
+					</ul>
+					<img src="img/error.png">
+				</section>
+
+				<section>
+					<h1>Demo</h1>
+					<p>/demo1</p>
+				</section>		
+
+				<section>
+					<h2>{errorception}</h2>
+					<ul>
+						<li><a href="http://errorception.com">http://errorception.com</a></li>
+						<li>30 day trial</li>
+						<li>$5 plan that reports up to 500 errors</li>
+						<li>Works via a simple embed</li>
+					</ul>
+				</section>	
+
+				<section>
+					<img src="img/ec1.png">
+				</section>
+
+				<section>
+					<img src="img/ec2.png">
+				</section>
+
+				<section>
+					<img src="img/ec3.png">
+				</section>
+
+				<section>
+					<h2>You've got a bug, now what?</h2>
+					<ul>
+						<li>Learn your browser tools</li>
+						<li>It doesn't necessarily matter if it's not your standard browser</li>
+						<li>And guess what - you can use more than one (really)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Chrome Dev Tools</h2>
+					<ul>
+						<li>Wrench -&gt; Tools -&gt; Developer Tools</li>
+						<li>Keyboard combo</li>
+						<li>Run at bottom, right, detached</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Demo</h1>
+				</section>		
+
+				<section>
+					<h2>What we care about...</h2>
+					<ul>
+						<li>Console</li>
+						<li>Network</li>
+						<li>Elements</li>
+						<li>Sources</li>
+						<li>Resources</li>
+						<li class="fragment">There is MORE!</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Console</h2>
+					<ul>
+						<li>Errors show up here</li>
+						<li>You can run commands here as well</li>
+						<li>You can view log messages here</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Console API</h2>
+					<ul>
+						<li>Your code can send messages to the console (<b>STOP USING ALERTS!</b>)</li>
+						<li>I use the heck out of this</li>
+						<li>No, really, I make logs like a lumberjack</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Console API</h2>
+					<ul>
+						<li><a href="http://getfirebug.com/wiki/index.php/Console_API">http://getfirebug.com/wiki/index.php/Console_API</a></li>
+						<li>log(), dir()</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Examples</h2>
+					<pre><code>
+console.log("This works");
+
+console.log("What is x?? "+x);
+
+console.log("X", x);
+
+console.log(object);
+					</code></pre>
+
+					<p class="fragment">
+						PRO TIP: <span class="fragment">The more you curse in your messages the quicker your code gets fixed!</span>
+					</p>
+				</section>
+
+				<section>
+					<h1>Demo</h1>
+					<p>/demo2</p>
+					<aside class="notes">
+And log to document ready
+Add log for click event
+Show (*"$simButton") in console not working.
+show elements and hunt for it
+					</aside>
+				</section>		
+
+				<section>
+					<h2>console.dir()</h2>
+					<ul>
+						<li>Dumps an object, not a simple value</li>
+						<li>Good for complex data</li>
+						<li>Good for figuring out the API to stuff</li>
+						<li>Firefox does it a bit nicer</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Demo</h1>
+					<aside class="notes">
+					just show it on navigator, window
+					</aside>
+				</section>	
+
+				<section>
+					<h2>Network Requests</h2>
+					<ul>
+						<li>Check the output</li>
+						<li>Look for things like redirects or errors</li>
+						<li>JSON/P is a bit different</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Demo</h1>
+					<p>/demo3 + jsonp</p>
+					<aside class="notes">
+					demo3 + jsonp
+					</aside>
+				</section>
+
+				<section>
+					<h2>Elements</h2>
+					<ul>
+						<li>Handy for looking at your DOM</li>
+						<li>Which may be dynamic (ColdFusion, Ruby, PHP, etc)</li>
+						<li>Which may be dynamic (JavaScript)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Demo</h1>
+					<p>/demo4</p>
+					<aside class="notes">
+						demo 4, test1 failing
+						test 2 - bad html
+					</aside>
+				</section>
+
+				<section>
+					<h2>Sources</h2>
+					<ul>
+						<li>Losts of all the scripts on your page</li>
+						<li>Also - a debugger</li>
+					</ul>
+					<aside class="notes">
+						Don't forget to show pretty print
+					</aside>
+				</section>
+
+				<section>
+					<h2>Debugger Key Terms</h2>
+					<ul>
+						<li>Breakpoints
+							<ul>
+								<li>Specific</li>
+								<li>Dynamic</li>
+								<li>DOM Change, XHR, Events</li>
+							</ul>
+						</li>
+						<li>Stepping (i.e. what to do on stop)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Demo</h1>
+					<p>/demo5 + hotswap</p>
+				</section>
+
+				<section>
+					<h2>Resources</h2>
+					<ul>
+						<li>Cookies, Databases, IndexedDB, Local (and Session) Storage, Application Cache</li>
+						<li>As well as HTML, JS, and CS</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Demo</h1>
+				</section>
+
+				<section>
+					<h1>Mobile Web</h1>
+				</section>
+
+				<section>
+					<h3>Wait... what... you can debug mobile web?</h3>
+					<img class="fragment" src="img/no.gif">
+				</section>
+
+				<!-- http://www.raymondcamden.com/index.cfm/2012/5/10/Setting-up-console-debugging-for-PhoneGap-and-Android -->
+				<section>
+					<h2>Problems</h2>
+					<ul>
+						<li>No console (ok, there is, but do you want to use it?)</li>
+						<li class="fragment">Entering URLs is a pain</li>
+						<li class="fragment">People insist on having different types of devices</li>
+						<li class="fragment">Different sizes, different HTML capabalities, CSS, JavaScript, and different performance</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Solution One</h2>
+					<img src="img/sales-pitch.jpg">
+				</section>
+
+				<section>
+					<h2>Edge Inspect</h2>
+					<img src="img/edge_inspect_mn.png">
+				</section>
+
+				<section>
+					<h2>Edge Inspect</h2>
+					<ul>
+						<li>Part of the Creative Cloud (creative.adobe.com)</li>
+						<li>Small desktop app, Chrome extension, iOS/Android app</li>
+						<li class="fragment">Free</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>How it works...</h2>
+					<ul>
+						<li>On your desktop, startup the app</li>
+						<li>On your desktop, enable it in the extension</li>
+						<li>On N mobile devices, open the app</li>
+						<li>Enter connection codes</li>
+					</ul>
+				</section>
+
+				<section>
+					<style type="text/css">
+						.edge_inspect_holder{
+							position: relative;
+							height: 325px;
+							padding: 0;
+						}
+						.reveal section .edge_inspect_holder img{
+							margin-top: 0;
+						}
+						.edge_inspect_browser{
+							position: absolute;
+							top: 0;
+							left: 0;
+						}
+
+						.edge_inspect_phone{
+							position: absolute;
+							top: 0;
+							right: 0;
+						}
+						.edge_inspect_ipad{
+							position: absolute;
+							top: 350px;
+							right: 0;
+						}
+					</style>
+					<div class="edge_inspect_holder">
+						<img src="img/edge_inspect_browser_home.png" width="500px" class="transparent edge_inspect_browser" />
+						<img src="img/edge_inspect_iphone_home.png" width="150px" class="transparent edge_inspect_phone" />
+						<img src="img/edge_inspect_browser_post.png" width="500px" class="transparent edge_inspect_browser fragment" />
+						<img src="img/edge_inspect_iphone_post.png" width="150px" class="transparent edge_inspect_phone fragment" />
+						<img src="img/ipad2.png" width="150px" class="transparent edge_inspect_ipad fragment" />
+					</div>
+					
+				</section>
+
+				<section>
+					<h1>Demo</h1>
+				</section>
+
+				<section>
+					<h2>Remote Debugging</h2>
+					<ul>
+						<li>Dev Tools for your Mobile Web (and PhoneGap on iOS)</li>
+						<li>USB Connection between your desktop and device</li>
+						<li>Android: <a href="https://developers.google.com/chrome-developer-tools/docs/remote-debugging" target="_new">Details</a> (notice, Chrome for Android, not the old browser)</li>
+						<li>iOS: Safari on desktop, setting on mobile device (Mac only #sadface)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Demo</h1>
+				</section>
+
+				<section>
+					<h2>Unit Testing</h2>
+					
+					<p class="fragment">A way to ensure that if you fix X, you don't break y</p>
+					<p class="fragment">Focuses on small, atomic tests</p>
+
+				</section>
+
+				<section>
+					<h2>Examples</h2>
+					<ul>
+						<li>Jasmine (http://pivotal.github.com/jasmine/)</li>
+						<li>Selenium (http://docs.seleniumhq.org/)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Jasmine</h2>
+					<ul>
+						<li>"Behavior-driven" tests</li>
+						<li>"This should do X..."</li>
+						<li>English-language type code</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Jasmine Examples</h2>
+				</section>
+
+				<section>
+					<h2>Selenium</h2>
+					<ul>
+						<li>Note - multiple parts I'm not discussing</li>
+						<li>Browser driver (Firefox)</li>
+						<li>Simplest level, do X, look for Y</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Selenium Examples</h2>
+				</section>
+
+				<section>
+					<h2>Where to go next?</h2>
+					<ul>
+						<li>Check out extensions</li>
+						<li>Read/Bookmark the Mozilla Developer Network (developer.mozilla.org)</li>
+						<li class="fragment">Never accept not knowing where the bug is</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h1>Questions?</h1>
+					<img src="img/bear_breathing_fire.jpg" style="height:350px">
+				</section>
+				<!--
+				ToDo
+				
+				Extensions
+				-->
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

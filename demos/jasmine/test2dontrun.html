@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<script src="../jquery.min.js"></script>
+<script src="./lib/jasmine-1.3.1/jasmine.js"></script>
+<script language="javascript">
+
+/*
+General idea - given ANY number, format it to 4 chars or less
+*/
+function fnum(x) {
+	if(isNaN(x)) return x;
+
+	if(x <= 9999) {
+		return x;
+	}
+
+	if(x < 1000000) {
+		return Math.round(x/1000) + "K";
+	}
+	if( x < 10000000) {
+		return (x/1000000).toFixed(2) + "M";
+	}
+
+	if(x < 1000000000) {
+		return Math.round((x/1000000)) + "M";
+	}
+
+	if(x < 1000000000000) {
+		return Math.round((x/1000000000)) + "B";
+	}
+
+	return "1T+";
+}
+
+describe("It can formate numbers nicely", function() {
+ 
+	it("takes a number less than ten thousand and returns it as is", function() {
+		var inputs = [1,100,999,1000,6321];
+		for(var i=0; i<inputs.length; i++) {
+			expect(inputs[i]).toBe(fnum(inputs[i]));
+		}
+		expect(11000).not.toBe(fnum(11000));
+	});
+ 
+	it("takes a number between 10,000 and 1 million and returns it as NK", function() {
+		var inputs = [12019,32901,64091,201912,199102,581091,789109,320980];
+		var outputs = ["12K","33K","64K","202K","199K","581K","789K","321K"];
+		for(var i=0; i<inputs.length; i++) {
+			expect(fnum(inputs[i])).toBe(outputs[i]);
+		}
+	});
+ 
+	it("takes a number between 1 million and 10 million and returns it as N.XXM", function() {
+		var inputs = [1210901,5312091,8901451];
+		var outputs = ["1.21M","5.31M","8.90M"];
+		for(var i=0; i<inputs.length; i++) {
+			expect(fnum(inputs[i])).toBe(outputs[i]);
+		}
+	});
+ 
+	it("takes a number between 1 billion and 1 trillion and returns it as NB", function() {
+		var inputs = [9286109901,32286109901,129286109901];
+		var outputs = ["9B","32B","129B"];
+		for(var i=0; i<inputs.length; i++) {
+			expect(fnum(inputs[i])).toBe(outputs[i]);
+		}
+	});
+ 
+	it("takes a number 1 trillion and over and returns it as 1T+", function() {
+		expect(fnum(1000000000000)).toBe("1T+");
+		expect(fnum(1000000000001)).toBe("1T+");
+	});
+ 
+	it("takes an invalid number and returns it as is", function() {
+		expect(fnum("moo")).toBe("moo");
+	});
+ 
+});
+</script>
+</head>
+
+<body>
+
+
+
+</body>
+</html>

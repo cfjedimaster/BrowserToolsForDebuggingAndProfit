@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Demo</title>
+</head>
+
+<body>
+
+<p>
+<input type="text" id="first" placeholder="First Value"> + 
+<input type="text" id="second" placeholder="Second Value"> = 
+<span id="result"></span>
+</p>
+
+<p>
+<button id="sumButton">Do the Math!</button>
+</p>
+
+
+<script src="../assets/js/jquery.js"></script>
+
+<script>
+$(document).ready(function() {
+
+	$("#sumButton").on("click", function() {
+		
+		var firstValue = Number($("#first").val());
+		var secondValue = Number($("#second").val());
+		
+		if(isNaN(firstValue) || isNaN(secondValue)) {
+			$("#result").text("Enter Numbers!");
+			return;
+		}
+
+		var sum = firstValue+secondValue;
+		
+		$("#result").text(sum);
+	
+	});
+});
+</script>
+
+	</body>
+</html>
